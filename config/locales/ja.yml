@@ -8,8 +8,8 @@ ja:
           has_many: "%{record}が存在しているので削除できません"
     models:
       task: タスク
-      attributes:
-        task:
+    attributes:
+      task:
         id: ID
         name: 名称
         description: 詳しい説明

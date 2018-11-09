@@ -9,7 +9,16 @@ html
   body
     .app-title.navbr.navbar-expand-md.navbar-light.bg-light
       .navbar-brand Taskleaf
+
+      ul.navbar-nav.mi-auto
+        - if current_user
+          li.nav-item= link_to 'タスク一覧', tasks_path, class: 'nav-link'
+          - if current_user.admin?
+            li.nav-item= link_to 'ユーザ一覧', admin_users_path, class: 'nav-link'
+          li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
+        - else
+          li.nav-item= link_to 'ログイン', login_path, class: 'nav-link'
     .container
-     - if flash.notice.present?
-      .alert.alert-success= flash.notice
-    = yield
+      - if flash.notice.present?
+        .alert.alert-success= flash.notice
+      = yield

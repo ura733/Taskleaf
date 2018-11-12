@@ -199,4 +199,7 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 spec/examples.txt
-*.pdf 
+*.pdf
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key

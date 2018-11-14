@@ -18,7 +18,7 @@ h1 タスク一覧
 table.table.table-hover
   thead.thread-default
     tr
-      th= sort_link(@q, :name)
+      th= sort_link(@q, :name, [:name, "created_at desc"])
       th= sort_link(@q, :created_at)
       th
     tbody
